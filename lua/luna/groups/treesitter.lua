@@ -84,7 +84,7 @@ function M.get(c, opts)
     ["@punctuation.special.htmldjango"] = { fg = c.grey_light },
     ["@string"] = "String",
     ["@string.documentation"] = "@comment",
-    ["@string.escape"] = "Special", -- For escape characters within a string.
+    ["@string.escape"] = { fg = c.signal }, -- For escape characters within a string.
     ["@string.regexp"] = { fg = c.string }, -- For regexes.
     ["@tag"] = "Label",
     ["@tag.attribute"] = "@property",
