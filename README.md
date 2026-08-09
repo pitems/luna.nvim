@@ -58,3 +58,4 @@ Theme files for other tools are available in [`extras/`](./extras/):
 - [Starship](./extras/starship)
 - [WezTerm](./extras/wezterm)
 - [yazi](./extras/yazi)
+- [Zellij](./extras/zellij)
