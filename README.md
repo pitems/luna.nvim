@@ -47,6 +47,7 @@ treesitter, and plugin integrations) has been generated, so it always wins.
 
 Theme files for other tools are available in [`extras/`](./extras/):
 
+- [Alacritty](./extras/alacritty)
 - [bat](./extras/bat)
 - [fzf](./extras/fzf)
 - [Ghostty](./extras/ghostty)
@@ -57,3 +58,4 @@ Theme files for other tools are available in [`extras/`](./extras/):
 - [Starship](./extras/starship)
 - [WezTerm](./extras/wezterm)
 - [yazi](./extras/yazi)
+- [Zellij](./extras/zellij)
