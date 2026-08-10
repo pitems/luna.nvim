@@ -52,6 +52,7 @@ Theme files for other tools are available in [`extras/`](./extras/):
 - [fzf](./extras/fzf)
 - [Ghostty](./extras/ghostty)
 - [Herdr](./extras/herdr)
+- [k9s](./extras/k9s)
 - [Kitty](./extras/kitty)
 - [lazygit](./extras/lazygit)
 - [OpenCode](./extras/opencode)
