@@ -30,9 +30,9 @@ function M.get(c)
     Red = c.error,
   }
   for name, fg in pairs(colors) do
-    groups["BufferLineMiniIcons" .. name] = { bg = c.bg_alt, fg = fg }
-    groups["BufferLineMiniIcons" .. name .. "Visible"] = { bg = c.bg_alt, fg = fg }
-    groups["BufferLineMiniIcons" .. name .. "Selected"] = { bg = c.bg_alt, fg = fg }
+    groups["BufferLineMiniIcons" .. name] = { bg = c.tabline, fg = fg }
+    groups["BufferLineMiniIcons" .. name .. "Visible"] = { bg = c.tabline, fg = fg }
+    groups["BufferLineMiniIcons" .. name .. "Selected"] = { bg = c.tabline, fg = fg }
   end
 
   return groups
