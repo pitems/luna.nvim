@@ -21,6 +21,7 @@ function M.get(c, opts)
     ["@lsp.type.namespace"] = "@module",
     ["@lsp.type.number"] = "@number",
     ["@lsp.type.operator"] = "@operator",
+    ["@lsp.type.method"] = "@function.method",
     ["@lsp.type.parameter"] = "@variable.parameter",
     ["@lsp.type.property"] = "@property",
     ["@lsp.type.property.terraform"] = {},
@@ -29,6 +30,8 @@ function M.get(c, opts)
     ["@lsp.type.string"] = {}, -- use treesitter styles for strings
     ["@lsp.type.typeAlias"] = "@type.definition",
     ["@lsp.type.variable"] = {}, -- use treesitter styles for regular variables
+    ["@lsp.mod.instance"] = "@variable",
+    ["@lsp.typemod.method.instance"] = "@function.method",
     ["@lsp.typemod.class.defaultLibrary"] = "@type.builtin",
     ["@lsp.typemod.enum.defaultLibrary"] = "@type.builtin",
     ["@lsp.typemod.enumMember.defaultLibrary"] = "@constant.builtin",

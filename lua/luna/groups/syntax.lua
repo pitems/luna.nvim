@@ -1,7 +1,7 @@
 local M = {}
 
 function M.get(c, opts)
-  return {
+  local ret = {
     Bold = {},
     Comment = { fg = c.comment },
     Constant = { fg = c.type },
@@ -49,14 +49,29 @@ function M.get(c, opts)
     htmlSpecialChar = { fg = c.signal },
 
     -- Markdown
-    RenderMarkdownCodeInline = { bg = opts.transparent and "NONE" or c.bg, fg = c.grey },
-    RenderMarkdownH1Bg = { bg = opts.transparent and "NONE" or c.bg, fg = c.silver },
-    RenderMarkdownH2Bg = { bg = opts.transparent and "NONE" or c.bg, fg = c.grey_pale },
-    RenderMarkdownH3Bg = { bg = opts.transparent and "NONE" or c.bg, fg = c.type },
-    RenderMarkdownH4Bg = { bg = opts.transparent and "NONE" or c.bg, fg = c.grey_light },
-    RenderMarkdownH5Bg = { bg = opts.transparent and "NONE" or c.bg, fg = c.grey_light },
-    RenderMarkdownH6Bg = { bg = opts.transparent and "NONE" or c.bg, fg = c.silver },
+    markdownHeadingDelimiter = { fg = c.grey_warm },
+    markdownBold = { fg = c.keyword, bold = true },
+    markdownItalic = { fg = c.type, italic = true },
+    markdownCode = { fg = c.string },
+    markdownCodeBlock = { fg = c.string },
+    markdownLinkText = { fg = c.func, underline = true },
+    markdownUrl = { fg = c.info, underline = true },
+    markdownListMarker = { fg = c.func },
+    markdownBlockquote = { fg = c.info },
+    RenderMarkdownCodeInline = { bg = c.surface, fg = c.string },
   }
+
+  local headings = { c.func, c.type, c.info, c.warning, c.ok, c.keyword }
+  for level, color in ipairs(headings) do
+    ret["markdownH" .. level] = { fg = color, bold = true }
+    ret["RenderMarkdownH" .. level .. "Bg"] = {
+      bg = opts.transparent and "NONE" or c.bg,
+      fg = color,
+      bold = true,
+    }
+  end
+
+  return ret
 end
 
 return M

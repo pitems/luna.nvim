@@ -43,29 +43,34 @@ function M.get(c, opts)
     ["@keyword.storage"] = "StorageClass",
     ["@label"] = { fg = c.keyword }, -- For labels: `label:` in C and `:label:` in Lua.
     ["@markup"] = "@none",
-    ["@markup.emphasis"] = {},
+    ["@markup.emphasis"] = { fg = c.type, italic = true },
     ["@markup.environment"] = "Macro",
     ["@markup.environment.name"] = "Type",
     ["@markup.heading"] = "Title",
-    ["@markup.raw.markdown_inline"] = { fg = c.grey },
+    ["@markup.raw.markdown_inline"] = { fg = c.string, bg = c.bg_alt },
     ["@markup.heading.1.markdown"] = "RenderMarkdownH1Bg",
     ["@markup.heading.2.markdown"] = "RenderMarkdownH2Bg",
     ["@markup.heading.3.markdown"] = "RenderMarkdownH3Bg",
     ["@markup.heading.4.markdown"] = "RenderMarkdownH4Bg",
     ["@markup.heading.5.markdown"] = "RenderMarkdownH5Bg",
     ["@markup.heading.6.markdown"] = "RenderMarkdownH6Bg",
-    ["@markup.italic"] = {},
-    ["@markup.link"] = { fg = c.ok },
+    ["@markup.italic"] = { fg = c.type, italic = true },
+    ["@markup.italic.markdown"] = { fg = c.type, italic = true },
+    ["@markup.link"] = { fg = c.func, underline = true },
+    ["@markup.link.markdown_inline"] = { fg = c.func, underline = true },
+    ["@markup.link.url"] = { fg = c.info, underline = true },
     ["@markup.link.label"] = "SpecialChar",
     ["@markup.link.label.symbol"] = "Identifier",
-    ["@markup.list"] = { fg = c.grey_light }, -- For special punctutation that does not fall in the categories before.
+    ["@markup.list"] = { fg = c.func }, -- For special punctutation that does not fall in the categories before.
     ["@markup.list.checked"] = { fg = c.ok }, -- For brackets and parens.
-    ["@markup.list.markdown"] = { fg = c.grey_light },
+    ["@markup.list.markdown"] = { fg = c.func },
     ["@markup.list.unchecked"] = { fg = c.func }, -- For brackets and parens.
     ["@markup.math"] = "Special",
-    ["@markup.raw"] = "String",
+    ["@markup.raw"] = { fg = c.string },
+    ["@markup.raw.markdown"] = { fg = c.string },
     ["@markup.strikethrough"] = { strikethrough = true },
-    ["@markup.strong"] = { fg = c.grey_light },
+    ["@markup.strong"] = { fg = c.keyword, bold = true },
+    ["@markup.strong.markdown"] = { fg = c.keyword, bold = true },
     ["@markup.underline"] = { underline = true },
     ["@module"] = "Include",
     ["@module.builtin"] = { fg = c.grey_light }, -- Variable names that are defined by the languages, like `this` or `self`.
@@ -74,13 +79,15 @@ function M.get(c, opts)
     ["@number"] = "Number",
     ["@number.float"] = "Float",
     ["@operator"] = "Operator",
-    ["@property"] = "Property",
+    ["@property"] = { fg = c.ok },
     ["@property.toml"] = "Property",
     ["@toml.tableKey"] = { fg = c.type },
     ["@punctuation.bracket"] = { fg = c.grey_light }, -- For brackets and parens.
     ["@punctuation.delimiter"] = { fg = c.grey_light }, -- For delimiters ie: `.`
     ["@punctuation.special"] = "SpecialChar",
-    ["@punctuation.special.markdown"] = { fg = c.grey_light }, -- For special symbols (e.g. `{}` in string interpolation)
+    ["@markup.quote"] = { fg = c.info },
+    ["@markup.quote.markdown"] = { fg = c.info },
+    ["@punctuation.special.markdown"] = { fg = c.grey_warm }, -- For special symbols (e.g. `{}` in string interpolation)
     ["@punctuation.special.htmldjango"] = { fg = c.grey_light },
     ["@string"] = "String",
     ["@string.documentation"] = "@comment",
@@ -101,8 +108,8 @@ function M.get(c, opts)
       fg = c.fg,
       -- style = opts.styles.variables
     }, -- Any variable name that does not have another highlight.
-    ["@variable.member"] = { fg = c.fg }, -- For fields.
-    ["@variable.parameter"] = { fg = c.silver }, -- For parameters of a function.
+    ["@variable.member"] = { fg = c.ok }, -- For fields.
+    ["@variable.parameter"] = { fg = c.parameter }, -- For parameters and named arguments.
     ["@variable.parameter.builtin"] = { fg = Util.blend_fg(c.cream, 0.8) }, -- For builtin parameters of a function, e.g. "..." or Smali's p[1-99]
 
     -- JSX/TSX

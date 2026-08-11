@@ -34,6 +34,7 @@ local palette = {
   func = "#75a1c7", -- function/method calls
   type = "#c4a8d6", -- types, traits, constants, JSX/TSX tags
   string = "#9eb38e", -- string literals, regex
+  parameter = "#79b8b3", -- function parameters and named arguments
   signal = "#c2916a", -- warm UI cue, not a syntax color: search/jump-target bg, git-change, dashboard keys
 
   -- Diagnostics, ranked by urgency (all 6.9-9.0 contrast against bg)
