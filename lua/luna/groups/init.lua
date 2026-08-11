@@ -4,6 +4,7 @@ local M = {}
 
 M.plugins = {
   ["avante.nvim"] = "avante",
+  ["aerial.nvim"] = "aerial",
   ["blink.cmp"] = "blink",
   ["CopilotChat.nvim"] = "copilotchat",
   ["dashboard-nvim"] = "dashboard",
