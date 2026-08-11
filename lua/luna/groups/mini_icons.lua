@@ -32,7 +32,7 @@ function M.get(c)
   for name, fg in pairs(colors) do
     groups["BufferLineMiniIcons" .. name] = { bg = c.bg, fg = fg }
     groups["BufferLineMiniIcons" .. name .. "Visible"] = { bg = c.bg, fg = fg }
-    groups["BufferLineMiniIcons" .. name .. "Selected"] = { bg = c.bg_alt, fg = fg }
+    groups["BufferLineMiniIcons" .. name .. "Selected"] = { bg = c.bg, fg = fg }
   end
 
   return groups
