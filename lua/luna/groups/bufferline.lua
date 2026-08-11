@@ -1,7 +1,7 @@
 local M = {}
 
 function M.get(c, opts)
-  local bg = opts.transparent and "NONE" or c.tabline
+  local bg = opts.transparent and "NONE" or c.bg_alt
 
   return {
     BufferLineFill = { bg = bg },

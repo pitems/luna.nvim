@@ -9,7 +9,6 @@ local palette = {
   bg_plum = "#302028",
   bg_delete = "#40000a",
   surface = "#333333",
-  tabline = "#494949",
   selection = "#384048",
   border = "#404040",
   float_bg = "#403c41",
