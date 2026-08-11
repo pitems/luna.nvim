@@ -63,7 +63,7 @@ function M.get(c, opts)
     StatusLine = { fg = c.white, bg = opts.transparent and "NONE" or c.bg_alt },
     StatusLineNC = { fg = c.silver, bg = opts.transparent and "NONE" or c.bg_alt },
     TabLine = { fg = c.grey_pale, bg = c.black },
-    TabLineFill = { fg = c.grey_mid },
+    TabLineFill = { bg = opts.transparent and "NONE" or c.bg, fg = c.grey_mid },
     TabLineSel = { fg = c.ok, bg = c.black },
     Title = { fg = c.ok },
     Visual = { bg = c.visual },
