@@ -38,7 +38,7 @@ function M.get(c, opts)
     ErrorMsg = { fg = c.error },
     VertSplit = { fg = c.float_bg },
     Folded = { fg = c.grey_light, bg = c.selection },
-    FoldColumn = { fg = c.comment, bg = opts.transparent and "NONE" or c.bg_soft },
+    FoldColumn = { fg = c.comment, bg = opts.transparent and "NONE" or c.bg },
     SignColumn = { fg = c.comment },
     LineNr = { fg = c.line_nr },
     MatchParen = { fg = c.grey_light },
