@@ -2,15 +2,18 @@ local M = {}
 
 function M.get(c)
   local groups = {
-    MiniIconsGrey = { bg = c.bg_alt, fg = c.fg },
-    MiniIconsPurple = { bg = c.bg_alt, fg = c.type },
-    MiniIconsBlue = { bg = c.bg_alt, fg = c.func },
-    MiniIconsAzure = { bg = c.bg_alt, fg = c.info },
-    MiniIconsCyan = { bg = c.bg_alt, fg = c.parameter },
-    MiniIconsGreen = { bg = c.bg_alt, fg = c.ok },
-    MiniIconsYellow = { bg = c.bg_alt, fg = c.warning },
-    MiniIconsOrange = { bg = c.bg_alt, fg = c.keyword },
-    MiniIconsRed = { bg = c.bg_alt, fg = c.error },
+    -- These base groups are shared by Neo-tree and other UI components.
+    -- Keep them transparent; Bufferline gets explicit state-specific groups
+    -- below so it can paint its icons without creating blocks elsewhere.
+    MiniIconsGrey = { bg = "NONE", fg = c.fg },
+    MiniIconsPurple = { bg = "NONE", fg = c.type },
+    MiniIconsBlue = { bg = "NONE", fg = c.func },
+    MiniIconsAzure = { bg = "NONE", fg = c.info },
+    MiniIconsCyan = { bg = "NONE", fg = c.parameter },
+    MiniIconsGreen = { bg = "NONE", fg = c.ok },
+    MiniIconsYellow = { bg = "NONE", fg = c.warning },
+    MiniIconsOrange = { bg = "NONE", fg = c.keyword },
+    MiniIconsRed = { bg = "NONE", fg = c.error },
   }
 
   -- Bufferline derives state-specific icon groups from the icon highlight
