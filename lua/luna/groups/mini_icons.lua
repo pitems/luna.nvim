@@ -2,22 +2,20 @@ local M = {}
 
 function M.get(c)
   local groups = {
-    -- Explicit transparency matters in tabline segments: without it,
-    -- Neovim can render the terminal's black background behind each icon.
-    MiniIconsGrey = { bg = "NONE", fg = c.fg },
-    MiniIconsPurple = { bg = "NONE", fg = c.type },
-    MiniIconsBlue = { bg = "NONE", fg = c.func },
-    MiniIconsAzure = { bg = "NONE", fg = c.info },
-    MiniIconsCyan = { bg = "NONE", fg = c.parameter },
-    MiniIconsGreen = { bg = "NONE", fg = c.ok },
-    MiniIconsYellow = { bg = "NONE", fg = c.warning },
-    MiniIconsOrange = { bg = "NONE", fg = c.keyword },
-    MiniIconsRed = { bg = "NONE", fg = c.error },
+    MiniIconsGrey = { bg = c.bg_alt, fg = c.fg },
+    MiniIconsPurple = { bg = c.bg_alt, fg = c.type },
+    MiniIconsBlue = { bg = c.bg_alt, fg = c.func },
+    MiniIconsAzure = { bg = c.bg_alt, fg = c.info },
+    MiniIconsCyan = { bg = c.bg_alt, fg = c.parameter },
+    MiniIconsGreen = { bg = c.bg_alt, fg = c.ok },
+    MiniIconsYellow = { bg = c.bg_alt, fg = c.warning },
+    MiniIconsOrange = { bg = c.bg_alt, fg = c.keyword },
+    MiniIconsRed = { bg = c.bg_alt, fg = c.error },
   }
 
   -- Bufferline derives state-specific icon groups from the icon highlight
-  -- name. Define them explicitly so an icon does not fall back to the
-  -- terminal background when its buffer is selected or merely visible.
+  -- name. Match each icon background to its buffer state so icons do not
+  -- appear as contrasting blocks inside the tab.
   local colors = {
     Grey = c.fg,
     Purple = c.type,
